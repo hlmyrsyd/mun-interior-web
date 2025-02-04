@@ -6,12 +6,6 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -19,6 +13,19 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Introduction
+
+This app using firebase for its database for the Content Management System (CMS)
+
+To Set Up Firebase
+- Go to Firebase Console
+- Create a new project (Disable Google Analytics if not needed).
+- Enable Firestore Database (Go to Build → Firestore Database → Start in test mode).
+- Enable Authentication (Go to Build → Authentication → Enable "Email/Password").
+- Get Firebase Config:
+  - Go to Project Settings → General → Find your Firebase SDK config.
+  - Copy the apiKey, authDomain, projectId, etc and connect it to Nextjs by crerating `lib/firebase.js` to configure Firebase.
 
 ## Learn More
 
