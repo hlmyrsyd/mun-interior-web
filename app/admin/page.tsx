@@ -32,7 +32,7 @@ export default function AdminPage() {
     };
 
     return (
-        <div>
+        <div className="flex w-full h-screen justify-center items-center">
             Admin Page
             <form onSubmit={addPost}>
                 <input

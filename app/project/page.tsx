@@ -27,7 +27,7 @@ export default function ProjectPage() {
     }, []);
 
     return (
-        <div>
+        <div className="flex w-full h-screen justify-center items-center">
             Project Page
             <h1>Post Blog</h1>
             <div>
