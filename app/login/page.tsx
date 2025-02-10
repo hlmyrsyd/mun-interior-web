@@ -3,6 +3,7 @@ import { auth } from "../../lib/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState, FormEvent } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Login() {
     const [email, setEmail] = useState<string>("");
@@ -28,12 +29,15 @@ export default function Login() {
             {/* LOGIN FORM */}
             <div className="flex p-4 flex-col justify-between items-center h-full w-2/3">
                 <div className="flex w-full justify-end gap-1">
-                    Login Page for <b>Mun Interior</b>
+                    You are going to admin page for <b>Mun Interior</b>
+                    <Link href="/">
+                        | Take me back
+                    </Link>
                 </div>
                 <div className="flex flex-col gap-10 w-1/3">
                     <div className="flex flex-col">
                         <h1 className="font-bold text-4xl">
-                            Hallo Angel
+                            Hallo
                         </h1>
                         <p>
                             Welcome Back

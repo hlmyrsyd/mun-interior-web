@@ -1,6 +1,9 @@
+"use client"
+
 import Link from "next/link";
 
 export default function Home() {
+
   return (
     <div className="flex w-full h-screen justify-center items-center">
       <h1 className="flex gap-4 text-2xl">
