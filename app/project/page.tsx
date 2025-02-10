@@ -1,7 +1,7 @@
 'use client'
 
 import { db } from "@/lib/firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import useLenis from "../components/useLenis";
@@ -11,6 +11,7 @@ interface Project {
     title: string;
     description: string;
     location: string;
+    createdAt: any;
 }
 
 export default function ProjectPage() {
@@ -21,7 +22,9 @@ export default function ProjectPage() {
     useEffect(() => {
         const fetchProjects = async () => {
             try {
-                const querySnapshot = await getDocs(collection(db, "projects"));
+                const q = query(collection(db, "projects"), orderBy("createdAt", "desc"));
+                const querySnapshot = await getDocs(q);
+                
                 const projectsData = querySnapshot.docs.map(doc => ({
                     id: doc.id,
                     ...doc.data(),
@@ -45,8 +48,6 @@ export default function ProjectPage() {
 
             <div 
                 className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6"
-                // onHoverStart={() => setIsHovered(true)}
-                // onHoverEnd={() => setIsHovered(false)}
             >
                 {projects.map(post => (
                     <div 
