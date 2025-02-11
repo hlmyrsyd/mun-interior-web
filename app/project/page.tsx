@@ -5,6 +5,7 @@ import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import useLenis from "../components/useLenis";
+import Link from "next/link";
 
 interface Project {
     id: string;
@@ -41,8 +42,11 @@ export default function ProjectPage() {
     return (
         <div className="flex flex-col w-full items-center p-6">
             <div className="flex w-full px-24 ">
-                <div className="fflex w-full border-b pb-2 mb-4">
+                <div className="flex justify-between items-center w-full border-b pb-2 mb-4">
                     <h1 className="text-5xl">Projects</h1>
+                    <Link href="/">
+                        Back Home
+                    </Link>
                 </div>
             </div>
 
